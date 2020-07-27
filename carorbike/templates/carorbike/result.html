@@ -1,0 +1,32 @@
+{% extends 'carorbike/base.html' %}
+
+{% block title%}Bike and Car Prediction AI app MENU{% endblock %}
+
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">Result</h4>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Photo Name</td>
+                <td>{{ photo_name }}</td>
+            </tr>
+            <tr>
+                <td>Photo Source</td>
+                <td><img src="{{ photo_data }}" class="preview-img"></img></td>
+            </tr>
+            <tr>
+                <td>Predicted Label</td>
+                <td>{{ predicted }}</td>
+            </tr>
+            <tr>
+                <td>Percentage</td>
+                <td>{{ percentage }} %</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{% url 'carorbike:index' %}" class="btn btn-primary">Return to Menu</a>
+
+</div>
+{% endblock %}
